@@ -344,7 +344,8 @@ trait WriteExt: AsyncWriteExt + Unpin {
         // self.write_version().await?;
         self.write_u8(0x05).await?;
         // self.write_command(command).await?;
-        self.write_u8(command as u8).await?;
+        // self.write_u8(command as u8).await?;
+        self.write_u8(0x01).await?;
         // self.write_reserved().await?;
         self.write_u8(0x00).await?;
         // self.write_target_addr(addr).await?;
